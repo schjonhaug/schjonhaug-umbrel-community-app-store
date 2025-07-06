@@ -1,9 +1,7 @@
-version: "3.7"
-
 services:
   app_proxy:
     environment:
-      APP_HOST: $APP_KANARI_WEB_IP
+      APP_HOST: $APP_SCHJONHAUG_KANARI_WEB_IP
       APP_PORT: 3000
 
   backend:
@@ -14,7 +12,7 @@ services:
     stop_grace_period: 1m
     networks:
       default:
-        ipv4_address: $APP_KANARI_BACKEND_IP
+        ipv4_address: $APP_SCHJONHAUG_KANARI_BACKEND_IP
     environment:
       KANARI_NETWORK: mainnet
       KANARI_ELECTRUM_URL: $APP_ELECTRS_NODE_IP:$APP_ELECTRS_TCP_PORT
@@ -32,8 +30,8 @@ services:
     stop_grace_period: 1m
     networks:
       default:
-        ipv4_address: $APP_KANARI_WEB_IP
+        ipv4_address: $APP_SCHJONHAUG_KANARI_WEB_IP
     environment:
-      NEXT_PUBLIC_API_URL: http://$APP_KANARI_BACKEND_IP:3000
+      NEXT_PUBLIC_API_URL: http://$APP_SCHJONHAUG_KANARI_BACKEND_IP:3000
     depends_on:
       - backend
