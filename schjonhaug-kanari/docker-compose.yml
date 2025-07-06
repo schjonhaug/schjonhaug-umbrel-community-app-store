@@ -12,8 +12,6 @@ services:
       - KANARI_METADATA_DB=/app/data/metadata.sqlite
     volumes:
       - ${APP_DATA_DIR}/backend:/app/data
-    networks:
-      - kanari-network
     expose:
       - 3000
 
@@ -26,8 +24,6 @@ services:
       - NEXT_PUBLIC_API_URL=http://backend:3000
     depends_on:
       - backend
-    networks:
-      - kanari-network
     expose:
       - 3000
 
@@ -35,7 +31,3 @@ services:
     environment:
       - APP_HOST=schjonhaug-kanari_frontend_1
       - APP_PORT=3000
-
-networks:
-  kanari-network:
-    driver: bridge
