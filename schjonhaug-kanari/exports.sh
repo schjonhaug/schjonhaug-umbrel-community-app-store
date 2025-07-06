@@ -3,8 +3,7 @@
 # App-specific environment variables
 export APP_KANARI_IP="10.21.21.50"
 export APP_KANARI_PORT="3000"
-export APP_KANARI_BACKEND_IP="10.21.21.51" 
-export APP_KANARI_BACKEND_PORT="3000"
+export APP_KANARI_BACKEND_IP="10.21.21.51"
 
 # Tor hidden service
 hidden_service_file="${EXPORTS_TOR_DATA_DIR}/app-${EXPORTS_APP_ID}/hostname"

@@ -12,6 +12,9 @@ services:
       - KANARI_METADATA_DB=/app/data/metadata.sqlite
     volumes:
       - ${APP_DATA_DIR}/backend:/app/data
+    networks:
+      default:
+        ipv4_address: $APP_KANARI_BACKEND_IP
     expose:
       - 3000
 
@@ -21,13 +24,16 @@ services:
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      - NEXT_PUBLIC_API_URL=http://backend:3000
+      - NEXT_PUBLIC_API_URL=http://$APP_KANARI_BACKEND_IP:3000
     depends_on:
       - backend
+    networks:
+      default:
+        ipv4_address: $APP_KANARI_IP
     expose:
       - 3000
 
   app_proxy:
     environment:
-      - APP_HOST=schjonhaug-kanari_frontend_1
-      - APP_PORT=3000
+      - APP_HOST=$APP_KANARI_IP
+      - APP_PORT=$APP_KANARI_PORT
