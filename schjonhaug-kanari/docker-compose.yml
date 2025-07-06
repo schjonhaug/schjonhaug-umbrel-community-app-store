@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - KANARI_NETWORK=mainnet
-      - KANARI_ELECTRUM_URL=tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
+      - KANARI_ELECTRUM_URL=$APP_KANARI_ELECTRUM_URL
       - KANARI_BIND_ADDRESS=0.0.0.0:3000
       - KANARI_WALLET_DIR=/app/data/wallets
       - KANARI_METADATA_DB=/app/data/metadata.sqlite
