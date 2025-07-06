@@ -27,8 +27,6 @@ services:
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
-    environment:
-      NEXT_PUBLIC_API_URL: http://backend:3000
     depends_on:
       - backend
     expose:
