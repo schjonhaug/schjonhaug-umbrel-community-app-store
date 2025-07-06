@@ -1,7 +1,9 @@
+version: "3.7"
+
 services:
   app_proxy:
     environment:
-      APP_HOST: schjonhaug-kanari_web_1
+      APP_HOST: $APP_KANARI_WEB_IP
       APP_PORT: 3000
 
   backend:
@@ -10,16 +12,17 @@ services:
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
+    networks:
+      default:
+        ipv4_address: $APP_KANARI_BACKEND_IP
     environment:
       KANARI_NETWORK: mainnet
-      KANARI_ELECTRUM_URL: $APP_KANARI_ELECTRUM_URL
+      KANARI_ELECTRUM_URL: $APP_ELECTRS_NODE_IP:$APP_ELECTRS_TCP_PORT
       KANARI_BIND_ADDRESS: 0.0.0.0:3000
       KANARI_WALLET_DIR: /app/data/wallets
       KANARI_METADATA_DB: /app/data/metadata.sqlite
     volumes:
       - ${APP_DATA_DIR}/backend:/app/data
-    expose:
-      - 3000
 
   web:
     build:
@@ -27,7 +30,10 @@ services:
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
+    networks:
+      default:
+        ipv4_address: $APP_KANARI_WEB_IP
+    environment:
+      NEXT_PUBLIC_API_URL: http://$APP_KANARI_BACKEND_IP:3000
     depends_on:
       - backend
-    expose:
-      - 3000

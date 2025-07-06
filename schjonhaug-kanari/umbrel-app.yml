@@ -1,21 +1,18 @@
 manifestVersion: 1
 id: schjonhaug-kanari
 name: Kanari
-tagline: Replace this tagline with your app's tagline
+tagline: Bitcoin Wallet Management
 icon: https://svgur.com/i/mvA.svg
 category: Bitcoin
 version: "0.1.0"
 port: 3000
 description: >-
-  Add your app's description here.
+  A simple Bitcoin wallet management system for Umbrel.
 
-
-  You can also add newlines!
-
-developer: Umbrel
-website: https://umbrel.com
-submitter: Umbrel
-submission: https://github.com/schjonhaug/kanari
+developer: schjonhaug
+website: https://github.com/schjonhaug/kanari
+submitter: schjonhaug
+submission: https://github.com/schjonhaug/schjonhaug-umbrel-community-app-store
 repo: https://github.com/schjonhaug/kanari
 support: https://github.com/schjonhaug/kanari/issues
 gallery:
@@ -23,7 +20,7 @@ gallery:
   - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
+  Initial release.
 dependencies:
   - bitcoin
   - electrs
