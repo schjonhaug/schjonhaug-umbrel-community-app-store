@@ -17,8 +17,8 @@ services:
       KANARI_NETWORK: mainnet
       KANARI_ELECTRUM_URL: tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
       KANARI_BIND_ADDRESS: 0.0.0.0:3001
-      KANARI_WALLET_DIR: /app/data/wallets
-      KANARI_METADATA_DB: /app/data/metadata.sqlite
+      KANARI_WALLET_DIR: /app/data/database/mainnet/wallets
+      KANARI_METADATA_DB: /app/data/database/mainnet/metadata.sqlite
     volumes:
       - ${APP_DATA_DIR}/backend:/app/data
 
