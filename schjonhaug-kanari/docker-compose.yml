@@ -28,12 +28,12 @@ services:
       - backend
     networks:
       - kanari-network
-    ports:
-      - 3000:3000
+    expose:
+      - 3000
 
   app_proxy:
     environment:
-      - APP_HOST=frontend
+      - APP_HOST=schjonhaug-kanari_frontend_1
       - APP_PORT=3000
 
 networks:
