@@ -1,11 +1,11 @@
+version: "3.7"
+
 services:
   app_proxy:
     environment:
       APP_HOST: schjonhaug-kanari_web_1
       APP_PORT: 3000
-      PROXY_API_WHITELIST: /api
-      PROXY_API_HOST: schjonhaug-kanari_backend_1
-      PROXY_API_PORT: 3001
+      PROXY_AUTH_WHITELIST: "/api/*"
 
   backend:
     build:
