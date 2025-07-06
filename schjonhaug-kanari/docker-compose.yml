@@ -1,0 +1,36 @@
+services:
+  backend:
+    build:
+      context: https://github.com/schjonhaug/kanari.git
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    environment:
+      - KANARI_NETWORK=mainnet
+      - KANARI_ELECTRUM_URL=tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
+      - KANARI_BIND_ADDRESS=0.0.0.0:3000
+      - KANARI_WALLET_DIR=/app/data/wallets
+      - KANARI_METADATA_DB=/app/data/metadata.sqlite
+    volumes:
+      - ${APP_DATA_DIR}/backend:/app/data
+    networks:
+      - kanari-network
+    expose:
+      - 3000
+
+  frontend:
+    build:
+      context: https://github.com/schjonhaug/kanari.git
+      dockerfile: frontend/Dockerfile
+    restart: unless-stopped
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:3000
+    depends_on:
+      - backend
+    networks:
+      - kanari-network
+    ports:
+      - 3000:3000
+
+networks:
+  kanari-network:
+    driver: bridge
