@@ -3,6 +3,9 @@ services:
     environment:
       APP_HOST: schjonhaug-kanari_web_1
       APP_PORT: 3000
+      PROXY_API_WHITELIST: /api
+      PROXY_API_HOST: schjonhaug-kanari_backend_1
+      PROXY_API_PORT: 3001
 
   backend:
     build:
@@ -13,7 +16,7 @@ services:
     environment:
       KANARI_NETWORK: mainnet
       KANARI_ELECTRUM_URL: tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
-      KANARI_BIND_ADDRESS: 0.0.0.0:3000
+      KANARI_BIND_ADDRESS: 0.0.0.0:3001
       KANARI_WALLET_DIR: /app/data/wallets
       KANARI_METADATA_DB: /app/data/metadata.sqlite
     volumes:
@@ -26,6 +29,6 @@ services:
     restart: on-failure
     stop_grace_period: 1m
     environment:
-      NEXT_PUBLIC_API_URL: http://schjonhaug-kanari_backend_1:3000
+      NEXT_PUBLIC_API_URL: ""
     depends_on:
       - backend
