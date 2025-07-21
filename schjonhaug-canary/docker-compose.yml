@@ -13,6 +13,8 @@ services:
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
+    ports:
+      - "3001:3001"
     environment:
       CANARY_NETWORK: mainnet
       CANARY_ELECTRUM_URL: tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
@@ -29,6 +31,6 @@ services:
     restart: on-failure
     stop_grace_period: 1m
     environment:
-      NEXT_PUBLIC_API_URL: ""
+      NEXT_PUBLIC_API_URL: "http://umbrel.local:3001"
     depends_on:
       - backend
