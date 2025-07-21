@@ -1,6 +1,6 @@
 manifestVersion: 1
-id: schjonhaug-kanari
-name: Kanari
+id: schjonhaug-canary
+name: Canary
 tagline: Bitcoin Wallet Management
 icon: https://svgur.com/i/mvA.svg
 category: Bitcoin
@@ -10,11 +10,11 @@ description: >-
   A simple Bitcoin wallet management system for Umbrel.
 
 developer: schjonhaug
-website: https://github.com/schjonhaug/kanari
+website: https://github.com/schjonhaug/canary
 submitter: schjonhaug
 submission: https://github.com/schjonhaug/schjonhaug-umbrel-community-app-store
-repo: https://github.com/schjonhaug/kanari
-support: https://github.com/schjonhaug/kanari/issues
+repo: https://github.com/schjonhaug/canary
+support: https://github.com/schjonhaug/canary/issues
 gallery:
   - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg

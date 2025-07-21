@@ -3,28 +3,28 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: schjonhaug-kanari_web_1
+      APP_HOST: schjonhaug-canary_web_1
       APP_PORT: 3000
       PROXY_AUTH_WHITELIST: "/api/*"
 
   backend:
     build:
-      context: https://github.com/schjonhaug/kanari.git#main:backend
+      context: https://github.com/schjonhaug/canary.git#main:backend
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
     environment:
-      KANARI_NETWORK: mainnet
-      KANARI_ELECTRUM_URL: tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
-      KANARI_BIND_ADDRESS: 0.0.0.0:3001
-      KANARI_WALLET_DIR: /app/data/database/mainnet/wallets
-      KANARI_METADATA_DB: /app/data/database/mainnet/metadata.sqlite
+      CANARY_NETWORK: mainnet
+      CANARY_ELECTRUM_URL: tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
+      CANARY_BIND_ADDRESS: 0.0.0.0:3001
+      CANARY_WALLET_DIR: /app/data/database/mainnet/wallets
+      CANARY_METADATA_DB: /app/data/database/mainnet/metadata.sqlite
     volumes:
       - ${APP_DATA_DIR}/database:/app/data/database
 
   web:
     build:
-      context: https://github.com/schjonhaug/kanari.git#main:frontend
+      context: https://github.com/schjonhaug/canary.git#main:frontend
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
