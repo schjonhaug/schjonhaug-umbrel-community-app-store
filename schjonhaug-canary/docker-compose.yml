@@ -39,6 +39,6 @@ services:
     stop_grace_period: 1m
     environment:
       # Backend API URL for the Next.js proxy (runtime)
-      NEXT_PUBLIC_API_URL: http://schjonhaug-canary_backend_1:3001
+      API_URL: http://schjonhaug-canary_backend_1:3001
     depends_on:
       - backend
