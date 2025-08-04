@@ -24,6 +24,7 @@ services:
       # Optional notification providers (ntfy is enabled by default)
       CANARY_ENABLE_NTFY: "true"
       CANARY_ENABLE_TWILIO: "false"
+      CANARY_SYNC_INTERVAL: 4
     volumes:
       - ${APP_DATA_DIR}/database:/app/data/database
 
