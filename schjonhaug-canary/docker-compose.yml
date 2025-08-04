@@ -19,6 +19,11 @@ services:
       CANARY_BIND_ADDRESS: 0.0.0.0:3001
       CANARY_WALLET_DIR: /app/data/database/mainnet/wallets
       CANARY_METADATA_DB: /app/data/database/mainnet/metadata.sqlite
+      # FOSS mode - disable authentication
+      CANARY_ENABLE_AUTH: "false"
+      # Optional notification providers (ntfy is enabled by default)
+      CANARY_ENABLE_NTFY: "true"
+      CANARY_ENABLE_TWILIO: "false"
     volumes:
       - ${APP_DATA_DIR}/database:/app/data/database
 
@@ -28,5 +33,8 @@ services:
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
+    environment:
+      # Backend API URL for the Next.js proxy
+      NEXT_PUBLIC_API_URL: http://schjonhaug-canary_backend_1:3001
     depends_on:
       - backend

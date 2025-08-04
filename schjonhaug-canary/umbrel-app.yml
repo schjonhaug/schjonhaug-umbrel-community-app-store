@@ -4,10 +4,12 @@ name: Canary
 tagline: Bitcoin Wallet Management
 icon: https://svgur.com/i/mvA.svg
 category: Bitcoin
-version: "0.2.3"
+version: "0.3.0"
 port: 3000
 description: >-
-  A simple Bitcoin wallet management system for Umbrel.
+  Canary is an open-source Bitcoin wallet management service that provides transaction notifications 
+  via ntfy.sh push notifications. Monitor your Bitcoin wallets and receive instant alerts when 
+  transactions are detected. No authentication required - perfect for self-hosted deployments.
 
 developer: schjonhaug
 website: https://github.com/schjonhaug/canary
