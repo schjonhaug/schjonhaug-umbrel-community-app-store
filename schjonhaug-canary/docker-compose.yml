@@ -32,12 +32,13 @@ services:
     build:
       context: https://github.com/schjonhaug/canary.git#main:frontend
       dockerfile: Dockerfile
+      args:
+        # FOSS mode - disable authentication (build time only)
+        NEXT_PUBLIC_AUTH_ENABLED: "false"
     restart: on-failure
     stop_grace_period: 1m
     environment:
-      # Backend API URL for the Next.js proxy
+      # Backend API URL for the Next.js proxy (runtime)
       NEXT_PUBLIC_API_URL: http://schjonhaug-canary_backend_1:3001
-      # FOSS mode - disable authentication in frontend
-      NEXT_PUBLIC_AUTH_ENABLED: "false"
     depends_on:
       - backend
