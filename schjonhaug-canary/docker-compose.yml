@@ -35,6 +35,7 @@ services:
       args:
         # FOSS mode - disable authentication (build time only)
         NEXT_PUBLIC_AUTH_ENABLED: "false"
+        NEXT_PUBLIC_SYNC_INTERVAL: "4"
     restart: on-failure
     stop_grace_period: 1m
     environment:
