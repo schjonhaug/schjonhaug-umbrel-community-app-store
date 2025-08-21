@@ -4,7 +4,7 @@ name: Canary
 tagline: Bitcoin Wallet Management
 icon: https://raw.githubusercontent.com/schjonhaug/canary/main/frontend/public/images/canary.svg
 category: Bitcoin
-version: "0.9.3"
+version: "0.9.4"
 port: 3000
 description: >-
   Canary is an open-source Bitcoin wallet management service that provides transaction notifications 
