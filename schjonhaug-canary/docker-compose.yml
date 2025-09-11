@@ -17,8 +17,7 @@ services:
       CANARY_NETWORK: mainnet
       CANARY_ELECTRUM_URL: tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
       CANARY_BIND_ADDRESS: 0.0.0.0:3001
-      CANARY_WALLET_DIR: /app/data/database/mainnet/wallets
-      CANARY_METADATA_DB: /app/data/database/mainnet/metadata.sqlite
+      CANARY_DATA_DIR: /app/data
       # FOSS mode - disable authentication
       CANARY_ENABLE_AUTH: "false"
       # Optional notification providers (ntfy is enabled by default)
@@ -26,7 +25,7 @@ services:
       CANARY_ENABLE_TWILIO: "false"
       CANARY_SYNC_INTERVAL: 4
     volumes:
-      - ${APP_DATA_DIR}/database:/app/data/database
+      - ${APP_DATA_DIR}:/app/data
 
   web:
     build:
