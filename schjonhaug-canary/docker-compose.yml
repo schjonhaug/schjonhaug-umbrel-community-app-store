@@ -23,7 +23,7 @@ services:
       # Optional notification providers (ntfy is enabled by default)
       CANARY_ENABLE_NTFY: "true"
       CANARY_ENABLE_TWILIO: "false"
-      CANARY_SYNC_INTERVAL: 5
+      CANARY_SYNC_INTERVAL: 15
     volumes:
       - ${APP_DATA_DIR}:/app/data
 
@@ -34,7 +34,7 @@ services:
       args:
         # FOSS mode - single user, no authentication (build time only)
         NEXT_PUBLIC_CANARY_MODE: "foss"
-        NEXT_PUBLIC_SYNC_INTERVAL: "5000"
+        NEXT_PUBLIC_SYNC_INTERVAL: "15000"
     restart: on-failure
     stop_grace_period: 1m
     environment:
