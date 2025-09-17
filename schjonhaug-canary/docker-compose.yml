@@ -9,7 +9,7 @@ services:
 
   backend:
     build:
-      context: https://github.com/schjonhaug/canary.git#v0.14.12:backend
+      context: https://github.com/schjonhaug/canary.git#v0.14.13:backend
       dockerfile: Dockerfile
     restart: on-failure
     stop_grace_period: 1m
@@ -29,7 +29,7 @@ services:
 
   web:
     build:
-      context: https://github.com/schjonhaug/canary.git#v0.14.12:frontend
+      context: https://github.com/schjonhaug/canary.git#v0.14.13:frontend
       dockerfile: Dockerfile
       args:
         # FOSS mode - single user, no authentication (build time only)
