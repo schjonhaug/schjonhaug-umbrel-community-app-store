@@ -18,8 +18,8 @@ services:
       CANARY_ELECTRUM_URL: tcp://$APP_ELECTRS_NODE_IP:$APP_ELECTRS_NODE_PORT
       CANARY_BIND_ADDRESS: 0.0.0.0:3001
       CANARY_DATA_DIR: /app/data
-      # FOSS mode - single user, no authentication
-      CANARY_MODE: "foss"
+      # Self-hosted mode - single user, no authentication
+      CANARY_MODE: "self-hosted"
       # Optional notification providers (ntfy is enabled by default)
       CANARY_ENABLE_NTFY: "true"
       CANARY_ENABLE_TWILIO: "false"
@@ -32,8 +32,8 @@ services:
       context: https://github.com/schjonhaug/canary.git#v0.15.2:frontend
       dockerfile: Dockerfile
       args:
-        # FOSS mode - single user, no authentication (build time only)
-        NEXT_PUBLIC_CANARY_MODE: "foss"
+        # Self-hosted mode - single user, no authentication (build time only)
+        NEXT_PUBLIC_CANARY_MODE: "self-hosted"
         NEXT_PUBLIC_SYNC_INTERVAL: "60000"
     restart: on-failure
     stop_grace_period: 1m
