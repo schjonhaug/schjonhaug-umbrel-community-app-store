@@ -22,9 +22,9 @@ submission: https://github.com/schjonhaug/schjonhaug-umbrel-community-app-store
 repo: https://github.com/schjonhaug/canary
 support: https://github.com/schjonhaug/canary/issues
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://raw.githubusercontent.com/schjonhaug/schjonhaug-umbrel-community-app-store/refs/heads/master/schjonhaug-canary/Gallery1.png
+  - https://raw.githubusercontent.com/schjonhaug/schjonhaug-umbrel-community-app-store/refs/heads/master/schjonhaug-canary/Gallery2.png
+  - https://raw.githubusercontent.com/schjonhaug/schjonhaug-umbrel-community-app-store/refs/heads/master/schjonhaug-canary/Gallery3.png
 releaseNotes: >-
   Initial release.
 dependencies:
