@@ -4,7 +4,7 @@ name: Canary
 tagline: Early warning system for Bitcoin cold storage
 icon: https://raw.githubusercontent.com/schjonhaug/canary/main/frontend/public/images/canary.svg
 category: Bitcoin
-version: "0.16.0"
+version: "0.16.1"
 port: 3000
 description: >-
   A canary in the cold mine. When your bitcoins are in cold storage, you seldom check on them.
